@@ -25,6 +25,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int _maleTier = 1;
   int _femaleTier = 1;
 
   @override
@@ -39,7 +40,26 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'Female Horse:',
+              'Male Horse Tier:',
+            ),
+            Text(
+              '$_maleTier',
+              style: Theme.of(context).textTheme.display1,
+            ),
+            DropdownButton<String> (
+              items: horseTiers.map((String value) {
+                return new DropdownMenuItem<String>(
+                  value: value,
+                  child: new Text(value),);
+              }).toList(),
+              onChanged: (String selectedValue) {
+                setState(() {
+                  _maleTier = int.parse(selectedValue);
+                });
+              },
+            ),
+            Text(
+              'Female Horse Tier:',
             ),
             Text(
               '$_femaleTier',
