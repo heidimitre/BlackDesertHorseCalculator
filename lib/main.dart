@@ -1,4 +1,4 @@
-import 'package:bdo_horse_calculator/horseDetail.dart';
+import 'package:bdo_horse_calculator/horse_detail/horseDetail.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -33,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: HorseDetail(title: 'Horse Detail'),
+        child: HorseDetail(title: 'horseDetail'),
       ),
     );
   }
