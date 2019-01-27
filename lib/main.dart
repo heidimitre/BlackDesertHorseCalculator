@@ -35,50 +35,95 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Male Horse Tier:',
-            ),
-            Text(
-              '$_maleTier',
-              style: Theme.of(context).textTheme.display1,
-            ),
-            DropdownButton<String> (
-              items: horseTiers.map((String value) {
-                return new DropdownMenuItem<String>(
-                  value: value,
-                  child: new Text(value),);
-              }).toList(),
-              onChanged: (String selectedValue) {
-                setState(() {
-                  _maleTier = int.parse(selectedValue);
-                });
-              },
-            ),
-            Text(
-              'Female Horse Tier:',
-            ),
-            Text(
-              '$_femaleTier',
-              style: Theme.of(context).textTheme.display1,
-            ),
-            DropdownButton<String> (
-              items: horseTiers.map((String value) {
-                return new DropdownMenuItem<String>(
-                  value: value,
-                  child: new Text(value),);
-              }).toList(),
-              onChanged: (String selectedValue) {
-                setState(() {
-                  _femaleTier = int.parse(selectedValue);
-                });
-              },
-            ),
-          ],
-        ),
+      body: Row(
+          children: [
+          Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    'Male Horse Tier:',
+                  ),
+                  Text(
+                    '$_maleTier',
+                    style: Theme.of(context).textTheme.display1,
+                  ),
+                  DropdownButton<String> (
+                    items: horseTiers.map((String value) {
+                      return new DropdownMenuItem<String>(
+                        value: value,
+                        child: new Text(value),);
+                    }).toList(),
+                    onChanged: (String selectedValue) {
+                      setState(() {
+                        _maleTier = int.parse(selectedValue);
+                      });
+                    },
+                  ),
+                  Text(
+                    'Female Horse Tier:',
+                  ),
+                  Text(
+                    '$_femaleTier',
+                    style: Theme.of(context).textTheme.display1,
+                  ),
+                  DropdownButton<String> (
+                    items: horseTiers.map((String value) {
+                      return new DropdownMenuItem<String>(
+                        value: value,
+                        child: new Text(value),);
+                    }).toList(),
+                    onChanged: (String selectedValue) {
+                      setState(() {
+                        _femaleTier = int.parse(selectedValue);
+                      });
+                    },
+                  ),
+                ],
+              ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'Male Horse Level:',
+              ),
+              Text(
+                '$_maleTier',
+                style: Theme.of(context).textTheme.display1,
+              ),
+              DropdownButton<String> (
+                items: horseTiers.map((String value) {
+                  return new DropdownMenuItem<String>(
+                    value: value,
+                    child: new Text(value),);
+                }).toList(),
+                onChanged: (String selectedValue) {
+                  setState(() {
+                    _maleTier = int.parse(selectedValue);
+                  });
+                },
+              ),
+              Text(
+                'Female Horse Level:',
+              ),
+              Text(
+                '$_femaleTier',
+                style: Theme.of(context).textTheme.display1,
+              ),
+              DropdownButton<String> (
+                items: horseTiers.map((String value) {
+                  return new DropdownMenuItem<String>(
+                    value: value,
+                    child: new Text(value),);
+                }).toList(),
+                onChanged: (String selectedValue) {
+                  setState(() {
+                    _femaleTier = int.parse(selectedValue);
+                  });
+                },
+              ),
+            ],
+          ),
+          ]
       ),
     );
   }
