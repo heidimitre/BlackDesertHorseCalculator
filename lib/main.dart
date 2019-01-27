@@ -1,5 +1,8 @@
-import 'package:bdo_horse_calculator/horse_detail/horseDetail.dart';
 import 'package:flutter/material.dart';
+import 'package:redux/redux.dart';
+
+import 'package:bdo_horse_calculator/horse_detail/horseDetail.dart';
+
 
 void main() => runApp(MyApp());
 

@@ -1,9 +1,16 @@
+import 'package:flutter/material.dart';
 import 'package:bdo_horse_calculator/horse_detail/horseLevelInput.dart';
 import 'package:bdo_horse_calculator/horse_detail/horseTierInput.dart';
-import 'package:flutter/material.dart';
+import 'package:redux/redux.dart';
+
+int horseTierReducer(int state, dynamic action) {
+  print("Action occured");
+  return state;
+}
 
 class HorseDetail extends StatefulWidget {
   HorseDetail({Key key, this.title}) : super(key: key);
+
 
   final String title;
 
@@ -12,11 +19,12 @@ class HorseDetail extends StatefulWidget {
 }
 
 class _HorseDetailState extends State<HorseDetail> {
+  final store = new Store<int>(horseTierReducer, initialState: 1);
   Widget build(BuildContext context) {
     return Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          HorseTierInput(title: 'horseTierInput',),
+          HorseTierInput(store: store),
           HorseLevelInput(title: 'horseLevelInput',)
         ]
     );
