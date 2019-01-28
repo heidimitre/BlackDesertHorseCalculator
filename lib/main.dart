@@ -11,9 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Black Desert Horse Calculator',
-      theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
-      ),
+      theme: new ThemeData.dark(),
       home: MyHomePage(title: 'Horse Data Input'),
     );
   }
