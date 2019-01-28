@@ -21,10 +21,14 @@ class HorseDetail extends StatefulWidget {
 class _HorseDetailState extends State<HorseDetail> {
   final store = new Store<int>(horseTierReducer, initialState: 1);
   Widget build(BuildContext context) {
-    return Row(
+    return Flex(
+        direction: Axis.vertical,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          HorseTierInput(store: store),
+          Padding(
+            padding: EdgeInsets.all(30.0),
+            child: HorseTierInput(store: store),
+          ),
           HorseLevelInput(title: 'horseLevelInput',)
         ]
     );
