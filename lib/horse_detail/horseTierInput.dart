@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:bdo_horse_calculator/model/model.dart';
 
-class HorseLevelInput extends StatelessWidget {
+class HorseTierInput extends StatelessWidget {
   final ViewModel model;
-  HorseLevelInput(this.model);
+  HorseTierInput(this.model);
 
-  List<String> horseLevels = ['1','2','3','4','5','6','7','8','9','10',
-  '11','12','13','14','15','16','17','18','19','20',
-  '21','22','23','24','25','26','27','28','29','30'];
+  List<String> horseTiers = ['1','2','3','4','5','6','7','8'];
 
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Text(
-          'Horse Level',
+          'Horse Tier',
           style: Theme.of(context).textTheme.headline,
         ),
         Row(
@@ -27,13 +25,13 @@ class HorseLevelInput extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.all(20.0),
                 child: DropdownButton<String> (
-                  value: model.maleHorseLevel.toString(),
-                  items: horseLevels.map((String value) {
+                  value: model.maleHorseTier.toString(),
+                  items: horseTiers.map((String value) {
                     return new DropdownMenuItem<String>(
                       value: value,
                       child: new Text(value),);
                   }).toList(),
-                  onChanged: (selectedValue) => model.onMaleLevelChange(int.parse(selectedValue)),
+                  onChanged: (selectedValue) => model.onMaleTierChange(int.parse(selectedValue)),
                 ),
               ),
             ]
@@ -48,13 +46,13 @@ class HorseLevelInput extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.all(20.0),
                 child: DropdownButton<String> (
-                  value: model.femaleHorseLevel.toString(),
-                  items: horseLevels.map((String value) {
+                  value: model.femaleHorseTier.toString(),
+                  items: horseTiers.map((String value) {
                     return new DropdownMenuItem<String>(
                       value: value,
                       child: new Text(value),);
                   }).toList(),
-                  onChanged: (selectedValue) => model.onFemaleLevelChange(int.parse(selectedValue)),
+                  onChanged: (selectedValue) => model.onFemaleTierChange(int.parse(selectedValue)),
                 ),
               ),
             ]
@@ -62,4 +60,5 @@ class HorseLevelInput extends StatelessWidget {
       ],
     );
   }
+
 }

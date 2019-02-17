@@ -4,7 +4,9 @@ import 'package:bdo_horse_calculator/redux/actions.dart';
 AppState appStateReducer(AppState state, action) {
   return AppState(
     maleHorseTier: maleHorseTierReducer(state.maleHorseTier, action),
-    femaleHorseTier: femaleHorseTierReducer(state.femaleHorseTier, action)
+    femaleHorseTier: femaleHorseTierReducer(state.femaleHorseTier, action),
+    maleHorseLevel: maleHorseLevelReducer(state.maleHorseLevel, action),
+    femaleHorseLevel: femaleHorseLevelReducer(state.femaleHorseLevel, action)
   );
 }
 
