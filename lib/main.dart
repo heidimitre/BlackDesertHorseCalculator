@@ -52,7 +52,10 @@ class MyHomePage extends StatelessWidget {
                   padding: EdgeInsets.all(30.0),
                   child: HorseTierInput(viewModel),
                 ),
-                HorseLevelInput(title: 'horseLevelInput',)
+                Padding(
+                  padding: EdgeInsets.all(30.0),
+                  child: HorseLevelInput(viewModel),
+                ),
               ]
           ),
         ),
@@ -63,21 +66,41 @@ class MyHomePage extends StatelessWidget {
 
 class _ViewModel {
   int maleHorseTier;
+  int femaleHorseTier;
+  int maleHorseLevel;
+  int femaleHorseLevel;
+
+
   final Function(int) onMaleTierChange;
+  final Function(int) onFemaleTierChange;
+  final Function(int) onMaleLevelChange;
+  final Function(int) onFemaleLevelChange;
 
   _ViewModel({
     this.maleHorseTier,
+    this.femaleHorseTier,
+    this.maleHorseLevel,
+    this.femaleHorseLevel,
+
     this.onMaleTierChange,
+    this.onFemaleTierChange,
+    this.onMaleLevelChange,
+    this.onFemaleLevelChange,
   });
 
   factory _ViewModel.create(Store<AppState> store) {
     _onMaleTierChange(int tier) {
       store.dispatch(UpdateMaleHorseTier(tier));
     }
+    _onFemaleTierChange(int tier) {
+      store.dispatch(UpdateFemaleHorseTier(tier));
+    }
 
     return _ViewModel(
       maleHorseTier: store.state.maleHorseTier,
+      femaleHorseTier: store.state.femaleHorseTier,
       onMaleTierChange: _onMaleTierChange,
+      onFemaleTierChange: _onFemaleTierChange,
     );
   }
 }
@@ -86,7 +109,6 @@ class HorseTierInput extends StatelessWidget {
   final _ViewModel model;
   HorseTierInput(this.model);
 
-  int _femaleTier = 1;
   List<String> horseTiers = ['1','2','3','4','5','6','7','8'];
 
   Widget build(BuildContext context) {
@@ -118,31 +140,27 @@ class HorseTierInput extends StatelessWidget {
               ),
             ]
         ),
-//        Row(
-//            mainAxisAlignment: MainAxisAlignment.center,
-//            children: [
-//              Text(
-//                'Female:',
-//                style: Theme.of(context).textTheme.title,
-//              ),
-//              Padding(
-//                padding: EdgeInsets.all(20.0),
-//                child: DropdownButton<String> (
-//                  value: _femaleTier.toString(),
-//                  items: horseTiers.map((String value) {
-//                    return new DropdownMenuItem<String>(
-//                      value: value,
-//                      child: new Text(value),);
-//                  }).toList(),
-////                  onChanged: (String selectedValue) {
-////                    setState(() {
-////                      _femaleTier = int.parse(selectedValue);
-////                    });
-////                  },
-//                ),
-//              ),
-//            ]
-//        ),
+        Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Female:',
+                style: Theme.of(context).textTheme.title,
+              ),
+              Padding(
+                padding: EdgeInsets.all(20.0),
+                child: DropdownButton<String> (
+                  value: model.femaleHorseTier.toString(),
+                  items: horseTiers.map((String value) {
+                    return new DropdownMenuItem<String>(
+                      value: value,
+                      child: new Text(value),);
+                  }).toList(),
+                  onChanged: (selectedValue) => model.onFemaleTierChange(int.parse(selectedValue)),
+                ),
+              ),
+            ]
+        ),
       ],
     );
   }
