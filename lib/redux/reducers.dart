@@ -1,39 +1,30 @@
+import 'package:bdo_horse_calculator/model/horse.dart';
 import 'package:bdo_horse_calculator/model/model.dart';
 import 'package:bdo_horse_calculator/redux/actions.dart';
 
 AppState appStateReducer(AppState state, action) {
   return AppState(
-    maleHorseTier: maleHorseTierReducer(state.maleHorseTier, action),
-    femaleHorseTier: femaleHorseTierReducer(state.femaleHorseTier, action),
-    maleHorseLevel: maleHorseLevelReducer(state.maleHorseLevel, action),
-    femaleHorseLevel: femaleHorseLevelReducer(state.femaleHorseLevel, action)
+    maleHorse: maleHorseReducer(state.maleHorse, action),
+    femaleHorse: femaleHorseReducer(state.femaleHorse, action),
   );
 }
 
-int maleHorseTierReducer(int state, action) {
+Horse maleHorseReducer(Horse previousHorse, action) {
   if(action is UpdateMaleHorseTier) {
-    return action.tier;
+    return new Horse(action.tier, previousHorse.level);
   }
-  return state;
-}
-
-int femaleHorseTierReducer(int state, action) {
-  if(action is UpdateFemaleHorseTier) {
-    return action.tier;
-  }
-  return state;
-}
-
-int maleHorseLevelReducer(int state, action) {
   if(action is UpdateMaleHorseLevel) {
-    return action.level;
+    return new Horse(previousHorse.tier, action.level);
   }
-  return state;
+  return previousHorse;
 }
 
-int femaleHorseLevelReducer(int state, action) {
-  if(action is UpdateFemaleHorseLevel) {
-    return action.level;
+Horse femaleHorseReducer(Horse previousHorse, action) {
+  if(action is UpdateFemaleHorseTier) {
+    return new Horse(action.tier, previousHorse.level);
   }
-  return state;
+  if(action is UpdateFemaleHorseLevel) {
+    return new Horse(previousHorse.tier, action.level);
+  }
+  return previousHorse;
 }

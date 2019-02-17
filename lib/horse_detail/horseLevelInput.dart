@@ -27,7 +27,7 @@ class HorseLevelInput extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.all(20.0),
                 child: DropdownButton<String> (
-                  value: model.maleHorseLevel.toString(),
+                  value: model.maleHorse.level.toString(),
                   items: horseLevels.map((String value) {
                     return new DropdownMenuItem<String>(
                       value: value,
@@ -48,7 +48,7 @@ class HorseLevelInput extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.all(20.0),
                 child: DropdownButton<String> (
-                  value: model.femaleHorseLevel.toString(),
+                  value: model.femaleHorse.level.toString(),
                   items: horseLevels.map((String value) {
                     return new DropdownMenuItem<String>(
                       value: value,

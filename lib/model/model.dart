@@ -1,34 +1,26 @@
+import 'package:bdo_horse_calculator/model/horse.dart';
 import 'package:bdo_horse_calculator/redux/actions.dart';
 import 'package:flutter/foundation.dart';
 import 'package:redux/redux.dart';
 
 class AppState {
-  int maleHorseTier;
-  int femaleHorseTier;
-  int maleHorseLevel;
-  int femaleHorseLevel;
+  Horse maleHorse;
+  Horse femaleHorse;
 
   AppState({
-    @required this.maleHorseTier,
-    @required this.femaleHorseTier,
-    @required this.maleHorseLevel,
-    @required this.femaleHorseLevel
+    @required this.maleHorse,
+    @required this.femaleHorse,
   });
 
   AppState.initialState() {
-    maleHorseTier = 1;
-    femaleHorseTier = 1;
-    maleHorseLevel = 1;
-    femaleHorseLevel = 1;
+    maleHorse = new Horse(1, 1);
+    femaleHorse = new Horse(1, 1);
   }
 }
 
 class ViewModel {
-  int maleHorseTier;
-  int femaleHorseTier;
-  int maleHorseLevel;
-  int femaleHorseLevel;
-
+  Horse maleHorse;
+  Horse femaleHorse;
 
   final Function(int) onMaleTierChange;
   final Function(int) onFemaleTierChange;
@@ -36,10 +28,8 @@ class ViewModel {
   final Function(int) onFemaleLevelChange;
 
   ViewModel({
-    this.maleHorseTier,
-    this.femaleHorseTier,
-    this.maleHorseLevel,
-    this.femaleHorseLevel,
+    this.femaleHorse,
+    this.maleHorse,
 
     this.onMaleTierChange,
     this.onFemaleTierChange,
@@ -62,10 +52,8 @@ class ViewModel {
     }
 
     return ViewModel(
-      maleHorseTier: store.state.maleHorseTier,
-      femaleHorseTier: store.state.femaleHorseTier,
-      maleHorseLevel: store.state.maleHorseLevel,
-      femaleHorseLevel: store.state.femaleHorseLevel,
+      maleHorse: store.state.maleHorse,
+      femaleHorse : store.state.femaleHorse,
 
       onMaleTierChange: _onMaleTierChange,
       onFemaleTierChange: _onFemaleTierChange,

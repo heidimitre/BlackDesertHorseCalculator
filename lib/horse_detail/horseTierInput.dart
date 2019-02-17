@@ -25,7 +25,7 @@ class HorseTierInput extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.all(20.0),
                 child: DropdownButton<String> (
-                  value: model.maleHorseTier.toString(),
+                  value: model.maleHorse.tier.toString(),
                   items: horseTiers.map((String value) {
                     return new DropdownMenuItem<String>(
                       value: value,
@@ -46,7 +46,7 @@ class HorseTierInput extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.all(20.0),
                 child: DropdownButton<String> (
-                  value: model.femaleHorseTier.toString(),
+                  value: model.femaleHorse.tier.toString(),
                   items: horseTiers.map((String value) {
                     return new DropdownMenuItem<String>(
                       value: value,
