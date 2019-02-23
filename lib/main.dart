@@ -43,9 +43,9 @@ class MyHomePage extends StatelessWidget {
       ),
       body: StoreConnector<AppState, ViewModel>(
         converter: (Store<AppState> store) => ViewModel.create(store),
-        builder: (BuildContext context, ViewModel viewModel) => Center(
-          child: Flex(
-              direction: Axis.vertical,
+        builder: (BuildContext context, ViewModel viewModel) => Column(
+          children: [
+          Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
@@ -56,21 +56,23 @@ class MyHomePage extends StatelessWidget {
                   padding: EdgeInsets.all(30.0),
                   child: FemaleHorseDetail(viewModel),
                 ),
-                RaisedButton(
-                      color: Colors.white30,
-                      textColor: Colors.white,
-                    onPressed: () {
-                      print("*****************");
-                      print("Male horse tier: " + viewModel.maleHorse.tier.toString());
-                      print("Male horse level: " + viewModel.maleHorse.level.toString());
-                      print("Female horse tier: " + viewModel.femaleHorse.tier.toString());
-                      print("Female horse level: " + viewModel.femaleHorse.level.toString());
-                    },
-                    child:
-                    new Text('Calculate')
-                )
+
               ]
           ),
+            RaisedButton(
+                color: Colors.white30,
+                textColor: Colors.white,
+                onPressed: () {
+                  print("*****************");
+                  print("Male horse tier: " + viewModel.maleHorse.tier.toString());
+                  print("Male horse level: " + viewModel.maleHorse.level.toString());
+                  print("Female horse tier: " + viewModel.femaleHorse.tier.toString());
+                  print("Female horse level: " + viewModel.femaleHorse.level.toString());
+                },
+                child:
+                new Text('Calculate')
+            ),
+        ]
         ),
       ),
     );
