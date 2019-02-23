@@ -2,8 +2,8 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:redux/redux.dart';
 
-import 'package:bdo_horse_calculator/horse_detail/horseLevelInput.dart';
-import 'package:bdo_horse_calculator/horse_detail/horseTierInput.dart';
+import 'package:bdo_horse_calculator/horse_detail/maleHorseDetail.dart';
+import 'package:bdo_horse_calculator/horse_detail/femaleHorseDetail.dart';
 
 import 'package:bdo_horse_calculator/model/model.dart';
 import 'package:bdo_horse_calculator/redux/reducers.dart';
@@ -50,11 +50,11 @@ class MyHomePage extends StatelessWidget {
               children: [
                 Padding(
                   padding: EdgeInsets.all(30.0),
-                  child: HorseTierInput(viewModel),
+                  child: MaleHorseDetail(viewModel),
                 ),
                 Padding(
                   padding: EdgeInsets.all(30.0),
-                  child: HorseLevelInput(viewModel),
+                  child: FemaleHorseDetail(viewModel),
                 ),
               ]
           ),
