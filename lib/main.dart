@@ -35,13 +35,6 @@ class MyHomePage extends StatelessWidget {
 
   final String title;
 
-  void _printState(ViewModel model) {
-    print("Male horse tier: " + model.maleHorse.tier.toString());
-    print("Male horse level: " + model.maleHorse.level.toString());
-    print("Female horse tier: " + model.femaleHorse.tier.toString());
-    print("Female horse level: " + model.femaleHorse.level.toString());
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,8 +59,13 @@ class MyHomePage extends StatelessWidget {
                 RaisedButton(
                       color: Colors.white30,
                       textColor: Colors.white,
-                    onPressed: () =>
-                      _printState(viewModel),
+                    onPressed: () {
+                      print("*****************");
+                      print("Male horse tier: " + viewModel.maleHorse.tier.toString());
+                      print("Male horse level: " + viewModel.maleHorse.level.toString());
+                      print("Female horse tier: " + viewModel.femaleHorse.tier.toString());
+                      print("Female horse level: " + viewModel.femaleHorse.level.toString());
+                    },
                     child:
                     new Text('Calculate')
                 )
