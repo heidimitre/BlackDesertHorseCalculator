@@ -1,3 +1,4 @@
+import 'package:bdo_horse_calculator/model/score.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:redux/redux.dart';
@@ -7,6 +8,8 @@ import 'package:bdo_horse_calculator/horse_detail/femaleHorseDetail.dart';
 
 import 'package:bdo_horse_calculator/model/model.dart';
 import 'package:bdo_horse_calculator/redux/reducers.dart';
+
+import 'package:bdo_horse_calculator/resources/tierScores.dart';
 
 void main() => runApp(MyApp());
 
@@ -68,6 +71,7 @@ class MyHomePage extends StatelessWidget {
                   print("Male horse level: " + viewModel.maleHorse.level.toString());
                   print("Female horse tier: " + viewModel.femaleHorse.tier.toString());
                   print("Female horse level: " + viewModel.femaleHorse.level.toString());
+                  _calculateScore(viewModel);
                 },
                 child:
                 new Text('Calculate')
@@ -76,5 +80,32 @@ class MyHomePage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  int _calculateScore(ViewModel model) {
+    TierScores tierscores = new TierScores();
+    int calculatedScore;
+    bool scoreFound = false;
+    int levelSum = model.maleHorse.level + model.femaleHorse.level;
+
+    //Using male tier since same tier since only same tier is supported
+    int tier = model.maleHorse.tier;
+    print("Tier is: " + tier.toString());
+
+    List<Score> scores = tierscores.list[tier-1];
+
+    int index = 0;
+    while(!scoreFound) {
+      if (levelSum < scores[index].upperBound &&
+          levelSum >= scores[index].lowerBound){
+        calculatedScore = scores[index].value;
+        scoreFound = true;
+      }
+      index++;
+    }
+
+    print("Sum is: " + levelSum.toString());
+    print("Calculated score is: " + calculatedScore.toString());
+    return calculatedScore;
   }
 }

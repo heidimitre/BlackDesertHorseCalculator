@@ -35,7 +35,10 @@ class MaleHorseDetail extends StatelessWidget {
                       value: value,
                       child: new Text(value),);
                   }).toList(),
-                  onChanged: (selectedValue) => model.onMaleTierChange(int.parse(selectedValue)),
+                  onChanged: (selectedValue) {
+                    model.onMaleTierChange(int.parse(selectedValue));
+                    model.onFemaleTierChange(int.parse(selectedValue));
+                  },
                 ),
               ),
             ]
