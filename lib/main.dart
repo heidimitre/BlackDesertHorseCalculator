@@ -1,4 +1,6 @@
+import 'package:bdo_horse_calculator/model/outcome.dart';
 import 'package:bdo_horse_calculator/model/score.dart';
+import 'package:bdo_horse_calculator/resources/possibleOutcomes.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter/material.dart';
 import 'package:redux/redux.dart';
@@ -84,6 +86,8 @@ class MyHomePage extends StatelessWidget {
 
   int _calculateScore(ViewModel model) {
     TierScores tierscores = new TierScores();
+    PossibleOutcomes possibleOutcomes = new PossibleOutcomes();
+
     int calculatedScore;
     bool scoreFound = false;
     int levelSum = model.maleHorse.level + model.femaleHorse.level;
@@ -106,6 +110,10 @@ class MyHomePage extends StatelessWidget {
 
     print("Sum is: " + levelSum.toString());
     print("Calculated score is: " + calculatedScore.toString());
+
+    Outcome calculatedOutcome = possibleOutcomes.getOutcome(calculatedScore);
+    calculatedOutcome.toString();
+
     return calculatedScore;
   }
 }
