@@ -1,3 +1,3 @@
 # bdo_horse_calculator
 
-A horse breeding calculator for the MMO Black Desert Online.
+A horse outcome calculator for the MMO Black Desert Online.
