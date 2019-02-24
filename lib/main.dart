@@ -112,7 +112,7 @@ class MyHomePage extends StatelessWidget {
     print("Calculated score is: " + calculatedScore.toString());
 
     Outcome calculatedOutcome = possibleOutcomes.getOutcome(calculatedScore);
-    calculatedOutcome.toString();
+    calculatedOutcome.printOutcome();
 
     return calculatedScore;
   }
