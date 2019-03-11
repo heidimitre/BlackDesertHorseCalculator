@@ -9,6 +9,11 @@ class Outcome {
   String outcomeFormatter(){
     var formatter = new NumberFormat.percentPattern();
     String outcomeString = "";
+
+    //Minimum score is 3 and default value of outcomeMap is {}
+    if(this.score < 3 || this.outcomeMap == {}) {
+      return "";
+    }
     this.outcomeMap.forEach((possibleHorse, probability){
       outcomeString = outcomeString + possibleHorse + " " + formatter.format(probability) + "\n";
     });

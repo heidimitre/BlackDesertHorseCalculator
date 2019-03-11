@@ -1,4 +1,6 @@
 
+import 'package:bdo_horse_calculator/model/horse.dart';
+
 class UpdateMaleHorseTier {
   final int tier;
 
@@ -21,4 +23,11 @@ class UpdateFemaleHorseLevel {
   final int level;
 
   UpdateFemaleHorseLevel(this.level);
+}
+
+class CalculateOutcome {
+  final Horse maleHorse;
+  final Horse femaleHorse;
+
+  CalculateOutcome(this.maleHorse, this.femaleHorse);
 }

@@ -72,13 +72,18 @@ class MyHomePage extends StatelessWidget {
                   print("Male horse level: " + viewModel.maleHorse.level.toString());
                   print("Female horse tier: " + viewModel.femaleHorse.tier.toString());
                   print("Female horse level: " + viewModel.femaleHorse.level.toString());
-                  _calculateScore(viewModel);
+                  viewModel.calculatePressed(viewModel.maleHorse, viewModel.femaleHorse);
+                  //_calculateScore(viewModel);
                 },
                 child:
                 new Text('Calculate')
             ),
-            Text(
-                'test'
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                viewModel.currentOutcome.outcomeFormatter(),
+                style: Theme.of(context).textTheme.title,
+              ),
             ),
           ]
         ),
