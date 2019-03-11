@@ -50,6 +50,38 @@ class PossibleOutcomes {
     Map<String, double> level13outcomes = {"4F": .06, "5M": .19, "5F": .23, "6M": .19, "6F": .23, "7M": .10};
     Outcome scoreLevel13 = new Outcome(13, level13outcomes);
     list.add(scoreLevel13);
+
+    Map<String, double> level14outcomes = {"5M": .12, "5F": .21, "6M": .18, "6F": .21, "7M": .18, "7F": .10};
+    Outcome scoreLevel14 = new Outcome(14, level14outcomes);
+    list.add(scoreLevel14);
+
+    Map<String, double> level15outcomes = {"5F": .24, "6M": .21, "6F": .24, "7M": .20, "7F": .11};
+    Outcome scoreLevel15 = new Outcome(15, level15outcomes);
+    list.add(scoreLevel15);
+
+    Map<String, double> level16outcomes = {"5F": .12, "6M": .24, "6F": .28, "7M": .24, "7F": .12};
+    Outcome scoreLevel16 = new Outcome(16, level16outcomes);
+    list.add(scoreLevel16);
+
+    Map<String, double> level17outcomes = {"6M": .18, "6F": .26, "7M": .22, "7F": .26, "8M": .08};
+    Outcome scoreLevel17 = new Outcome(17, level17outcomes);
+    list.add(scoreLevel17);
+
+    Map<String, double> level18outcomes = {"6M": .03, "6F": .24, "7M": .21, "7F": .24, "8M": .21, "8F": .07};
+    Outcome scoreLevel18 = new Outcome(18, level18outcomes);
+    list.add(scoreLevel18);
+
+    Map<String, double> level19outcomes = {"6F": .16, "7M": .24, "7F": .28, "8M": .24, "8F": .08};
+    Outcome scoreLevel19 = new Outcome(19, level19outcomes);
+    list.add(scoreLevel19);
+
+    Map<String, double> level20outcomes = {"7M": .28, "7F": .33, "8M": .28, "8F": .11};
+    Outcome scoreLevel20 = new Outcome(20, level20outcomes);
+    list.add(scoreLevel20);
+
+    Map<String, double> level21outcomes = {"7M": .28, "7F": .33, "8M": .28, "8F": .11};
+    Outcome scoreLevel21 = new Outcome(21, level21outcomes);
+    list.add(scoreLevel21);
   }
 
   Outcome getOutcome(int score) {
