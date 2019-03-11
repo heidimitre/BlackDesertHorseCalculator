@@ -15,13 +15,25 @@ class PossibleOutcomes {
     list.add(scoreLevel4);
 
 
-    Map<String, double> level5outcomes = {"2M":.08, "2F":52, "3M":.40};
-    Outcome scoreLevel5 = new Outcome(5, level4outcomes);
+    Map<String, double> level5outcomes = {"2M":.08, "2F":.52, "3M":.40};
+    Outcome scoreLevel5 = new Outcome(5, level5outcomes);
     list.add(scoreLevel5);
 
     Map<String, double> level6outcomes = {"2F":.26, "3M":.38, "3F":.36};
-    Outcome scoreLevel6 = new Outcome(6, level4outcomes);
+    Outcome scoreLevel6 = new Outcome(6, level6outcomes);
     list.add(scoreLevel6);
+
+    Map<String, double> level7outcomes = {"3M":.34, "3F":.39, "4M": .27};
+    Outcome scoreLevel7 = new Outcome(7, level7outcomes);
+    list.add(scoreLevel7);
+
+    Map<String, double> level8outcomes = {"3M":.10, "3F": .35, "4M": .30, "4F": .25};
+    Outcome scoreLevel8 = new Outcome(8, level8outcomes);
+    list.add(scoreLevel8);
+
+    Map<String, double> level9outcomes = {"3F":.22, "4M": .27, "4F": .32, "5M": .19};
+    Outcome scoreLevel9 = new Outcome(9, level9outcomes);
+    list.add(scoreLevel9);
   }
 
   Outcome getOutcome(int score) {

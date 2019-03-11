@@ -61,7 +61,6 @@ class MyHomePage extends StatelessWidget {
                   padding: EdgeInsets.all(30.0),
                   child: FemaleHorseDetail(viewModel),
                 ),
-
               ]
           ),
             RaisedButton(
@@ -78,7 +77,10 @@ class MyHomePage extends StatelessWidget {
                 child:
                 new Text('Calculate')
             ),
-        ]
+            Text(
+                'test'
+            ),
+          ]
         ),
       ),
     );
@@ -112,7 +114,7 @@ class MyHomePage extends StatelessWidget {
     print("Calculated score is: " + calculatedScore.toString());
 
     Outcome calculatedOutcome = possibleOutcomes.getOutcome(calculatedScore);
-    calculatedOutcome.printOutcome();
+    print(calculatedOutcome.outcomeFormatter());
 
     return calculatedScore;
   }

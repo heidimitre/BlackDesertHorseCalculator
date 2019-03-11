@@ -6,12 +6,12 @@ class Outcome {
 
   Outcome(this.score, this.outcomeMap);
 
-  void printOutcome(){
+  String outcomeFormatter(){
     var formatter = new NumberFormat.percentPattern();
-    print("Score is: " + this.score.toString());
-    print("Outcomes:");
+    String outcomeString = "";
     this.outcomeMap.forEach((possibleHorse, probability){
-      print(possibleHorse + " " + formatter.format(probability));
+      outcomeString = outcomeString + possibleHorse + " " + formatter.format(probability) + "\n";
     });
+    return outcomeString;
   }
 }
