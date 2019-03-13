@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "398820480107",
+    "firebase_url": "https://bdo-horse-calculator.firebaseio.com",
+    "project_id": "bdo-horse-calculator",
+    "storage_bucket": "bdo-horse-calculator.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:398820480107:android:b8033f3c954fd01a",
+        "android_client_info": {
+          "package_name": "com.heidimitre.bdohorsecalculator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "398820480107-s9o4dqht2pire6q0aqk74m1isc9fq8vp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3dhSPK_kKg_bxRuFgdYljvNI4nsn_iGs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
