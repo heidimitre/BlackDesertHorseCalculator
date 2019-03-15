@@ -38,6 +38,7 @@ Outcome outcomeReducer(Outcome previousOutcome, Horse maleHorse, Horse femaleHor
   if(action is CalculateOutcome) {
     TierScores tierscores = new TierScores();
     PossibleOutcomes possibleOutcomes = new PossibleOutcomes();
+    possibleOutcomes.printOutcomes();
 
     int calculatedScore;
     bool scoreFound = false;

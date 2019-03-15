@@ -14,7 +14,6 @@ class PossibleOutcomes {
     Outcome scoreLevel4 = new Outcome(4, level4outcomes);
     list.add(scoreLevel4);
 
-
     Map<String, double> level5outcomes = {"2M":.08, "2F":.52, "3M":.40};
     Outcome scoreLevel5 = new Outcome(5, level5outcomes);
     list.add(scoreLevel5);
@@ -92,5 +91,11 @@ class PossibleOutcomes {
       }
     });
     return found;
+  }
+
+  void printOutcomes() {
+    list.forEach((outcome) {
+      print((outcome.toJson()));
+    });
   }
 }

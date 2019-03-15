@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   firebase_core: ^0.2.5  # add dependency for Firebase Core
+  cloud_firestore:
 
   intl: ">=0.14.0"
 
